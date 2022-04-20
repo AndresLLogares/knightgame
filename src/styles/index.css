@@ -1,13 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Syncopate&display=swap');
 
+.examplesFonts {
+  font-family: 'Mitr', sans-serif;
+  font-family: 'Syncopate', sans-serif;
+}
 :root {
-  --primary: #1a1c20;
-  --secondary: #ffd5cd;
-  --accent: #f9813a;
+  --primary: #010101;
+  --secondary: #FFFFFF;
+  --accent: #f06236;
 }
 
 * {
-  font-family: "Racing Sans One", cursive;
+  font-family: 'Mitr', sans-serif;
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
