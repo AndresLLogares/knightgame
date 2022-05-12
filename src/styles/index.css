@@ -244,7 +244,8 @@ h3 span {
   text-transform: capitalize;
 }
 .settings-row-card img {
-  width: 9rem;
+  width: 6rem;
+  height: 6rem;
 }
 .settings-small-img img {
   align-self: center;

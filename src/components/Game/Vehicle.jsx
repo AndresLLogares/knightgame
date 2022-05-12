@@ -1,28 +1,27 @@
 import { useEffect } from "react";
-// !! FIX ASSETS SIZE AND EXPORTS
-import BikeOne from "./../../assets/bike/bike-0.png";
-import BikeTwo from "./../../assets/bike/bike-1.png";
-import BikeStop from "./../../assets/bike/bike-jump.png";
-import BikeLoose from "./../../assets/bike/bike-crash.png";
-import CarOne from "./../../assets/car/car-0.png";
-import CarTwo from "./../../assets/car/car-1.png";
-import CarStop from "./../../assets/car/car-jump.png";
-import CarLoose from "./../../assets/car/car-crash.png";
-import BeanCarOne from "./../../assets/soldier/Soldier1.png";
-import BeanCarTwo from "./../../assets/soldier/Soldier2.png";
-import BeanCarStop from "./../../assets/soldier/Soldier3.png";
-import BeanCarLoose from "./../../assets/soldier/Soldier4.png";
-import BusOne from "./../../assets/bus/bus-0.png";
-import BusTwo from "./../../assets/bus/bus-1.png";
-import BusStop from "./../../assets/bus/bus-jump.png";
-import BusLoose from "./../../assets/bus/bus-crash.png";
-import CycleOne from "./../../assets/cycle/cycle-0.png";
-import CycleTwo from "./../../assets/cycle/cycle-1.png";
-import CycleStop from "./../../assets/cycle/cycle-jump.png";
-import CycleLoose from "./../../assets/cycle/cycle-crash.png";
+import MegamanOne from "../../assets/megaman/Megaman1.png";
+import MegamanTwo from "../../assets/megaman/Megaman2.png";
+import MegamanStop from "../../assets/megaman/Megaman3.png";
+import MegamanLoose from "../../assets/megaman/Megaman4.png";
+import SoldierOne from "./../../assets/soldier/Soldier1.png";
+import SoldierTwo from "./../../assets/soldier/Soldier2.png";
+import SoldierStop from "./../../assets/soldier/Soldier3.png";
+import SoldierLoose from "./../../assets/soldier/Soldier4.png";
+import CharacterTwoOne from "./../../assets/Character2/Character2Frame1.png";
+import CharacterTwoTwo from "./../../assets/Character2/Character2Frame2.png";
+import CharacterTwoJump from "./../../assets/Character2/Character2Jump.png";
+import CharacterTwoLose from "./../../assets/Character2/Character2Lose.png";
+import CharacterThreeOne from "./../../assets/Character3/Character3Frame1.png";
+import CharacterThreeTwo from "./../../assets/Character3/Character3Frame2.png";
+import CharacterThreeJump from "./../../assets/Character3/Character3Jump.png";
+import CharacterThreeLose from "./../../assets/Character3/Character3Lose.png";
+import CharacterFourOne from "./../../assets/Character4/Character4Frame1.png";
+import CharacterFourTwo from "./../../assets/Character4/Character4Frame2.png";
+import CharacterFourJump from "./../../assets/Character4/Character4Jump.png";
+import CharacterFourLose from "./../../assets/Character4/Character4Lose.png";
 
 const JUMP_SPEED = 0.45;
-const GRAVITY = 0.0015;
+const GRAVITY = 0.0012;
 const Vehicle_FRAME_COUNT = 2;
 const FRAME_TIME = 100;
 
@@ -51,6 +50,7 @@ const handleJump = (delta, setVehicleBottom) => {
     bottom = 0;
     isJumping = false;
   }
+  
   yVelocity -= GRAVITY * delta;
   return;
 };
@@ -84,11 +84,11 @@ export const onJump = (e) => {
 
 export const Vehicle = ({ frame, bottom, vehicleRef, currentVehicle }) => {
   const vehicles = [
-    /*0*/ [BeanCarOne, BeanCarTwo, BeanCarStop, BeanCarLoose],
-    /*1*/ [BikeOne, BikeTwo, BikeStop, BikeLoose],
-    /*2*/ [BusOne, BusTwo, BusStop, BusLoose],
-    /*3*/ [CarOne, CarTwo, CarStop, CarLoose],
-    /*4*/ [CycleOne, CycleTwo, CycleStop, CycleLoose],
+    /*0*/ [SoldierOne, SoldierTwo, SoldierStop, SoldierLoose],
+    /*1*/ [MegamanOne, MegamanTwo, MegamanStop, MegamanLoose],
+    /*2*/ [CharacterTwoOne, CharacterTwoTwo, CharacterTwoJump, CharacterTwoLose],
+    /*3*/ [CharacterThreeOne, CharacterThreeTwo, CharacterThreeJump, CharacterThreeLose],
+    /*4*/ [CharacterFourOne, CharacterFourTwo, CharacterFourJump, CharacterFourLose],
   ];
 
   useEffect(() => {

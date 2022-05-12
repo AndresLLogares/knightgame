@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import SettingsIcon from "./../assets/icons/Settings.png";
 import CloseIcon from "./../assets/icons/close.png";
 import ResetIcon from "./../assets/icons/reset.png";
-import BeanCarIcon from "./../assets/beanCar/beanCar-0.png";
-import CarIcon from "./../assets/car/car-0.png";
-import BusIcon from "./../assets/bus/bus-0.png";
-import BikeIcon from "./../assets/bike/bike-0.png";
-import CycleIcon from "./../assets/cycle/cycle-0.png";
-import CityIcon from "./../assets/bg/city.png";
 import WestIcon from "./../assets/bg/west.png";
 import FutureIcon from "./../assets/bg/future.png";
 import WarzoneIcon from "./../assets/bg/warzone.png";
-import CactusItem from "./../assets/obstacles/cactus.png";
-import HoleItem from "./../assets/obstacles/hole.png";
-import RoadBlock1Item from "./../assets/obstacles/road-block-1.png";
-import RoadBlock2Item from "./../assets/obstacles/road-block-2.png";
-import RoadBlock3Item from "./../assets/obstacles/road-block-3.png";
-import RoadBlock4Item from "./../assets/obstacles/road-block-4.png";
+import EnemyOne from "./../assets/enemys/enemy1.gif";
+import EnemyTwo from "./../assets/enemys/enemy2.gif";
+import EnemyThree from "./../assets/enemys/enemy3.gif";
+import EnemyFour from "./../assets/enemys/enemy4.gif";
+import EnemyFive from "./../assets/enemys/enemy5.gif";
+import EnemySix from "./../assets/enemys/enemy6.gif";
+import MegamanOne from "../assets/megaman/Megaman1.png";
+import SoldierOne from "./../assets/soldier/Soldier1.png";
+import CharacterTwoOne from "./../assets/Character2/Character2Frame1.png";
+import CharacterThreeOne from "./../assets/Character3/Character3Frame1.png";
+import CharacterFourOne from "./../assets/Character4/Character4Frame1.png";
+import Beach from "./../assets/bg/backgroundBeach.png";
 
 const Settings = ({
   currentVehicle,
@@ -35,35 +35,35 @@ const Settings = ({
   const vehicles = [
     {
       id: 0,
-      src: BeanCarIcon,
+      src: SoldierOne,
       name: "beanCar",
     },
     {
       id: 1,
-      src: BikeIcon,
+      src: MegamanOne,
       name: "bike",
     },
     {
       id: 2,
-      src: BusIcon,
+      src: CharacterTwoOne,
       name: "bus",
     },
     {
       id: 3,
-      src: CarIcon,
+      src: CharacterThreeOne,
       name: "car",
     },
     {
       id: 4,
-      src: CycleIcon,
+      src: CharacterFourOne,
       name: "cycle",
     },
   ];
   const locations = [
     {
       id: 0,
-      src: CityIcon,
-      name: "city",
+      src: Beach,
+      name: "Beach",
     },
     {
       id: 1,
@@ -82,12 +82,12 @@ const Settings = ({
     },
   ];
   const obstacles = [
-    { id: 0, src: CactusItem, name: "cactus" },
-    { id: 1, src: HoleItem, name: "hole" },
-    { id: 2, src: RoadBlock1Item, name: "road block 1" },
-    { id: 3, src: RoadBlock2Item, name: "road block 2" },
-    { id: 4, src: RoadBlock3Item, name: "road block 3" },
-    { id: 5, src: RoadBlock4Item, name: "road block 4" },
+    { id: 0, src: EnemyOne, name: "cactus" },
+    { id: 1, src: EnemyTwo, name: "hole" },
+    { id: 2, src: EnemyThree, name: "road block 1" },
+    { id: 3, src: EnemyFour, name: "road block 2" },
+    { id: 4, src: EnemyFive, name: "road block 3" },
+    { id: 5, src: EnemySix, name: "road block 4" },
   ];
   const difficulties = [
     {
@@ -134,7 +134,8 @@ const Settings = ({
                   }`}
                   onClick={() => setCurrentVehicle(vehicle.id)}
                 >
-                  <img src={vehicle.src} alt={vehicle.name} />
+                  <img 
+                  src={vehicle.src} alt={vehicle.name} />
                 </div>
               ))}
             </div>

@@ -6,19 +6,18 @@ import {
   getCustomProperty,
   incrementCustomProperty,
 } from "./../../helpers/updateProperty";
-import CactusItem from "./../../assets/enemys/enemy1.gif";
-import HoleItem from "./../../assets/enemys/enemy2.gif";
-import RoadBlock1Item from "./../../assets/enemys/enemy1.gif";
-import RoadBlock2Item from "./../../assets/enemys/enemy4.gif";
-import RoadBlock3Item from "./../../assets/enemys/enemy5.gif";
-import RoadBlock4Item from "./../../assets/enemys/enemy3.gif";
+import EnemyOne from "./../../assets/enemys/enemy1.gif";
+import EnemyTwo from "./../../assets/enemys/enemy2.gif";
+import EnemyThree from "./../../assets/enemys/enemy3.gif";
+import EnemyFour from "./../../assets/enemys/enemy4.gif";
+import EnemyFive from "./../../assets/enemys/enemy5.gif";
+import EnemySix from "./../../assets/enemys/enemy6.gif";
 import JumpIcon from "./../../assets/icons/Jump.png";
 import Obstacle from "./Obstacle.jsx";
-import City from "./../../assets/bg/city.png";
 import West from "./../../assets/bg/west.png";
 import Warzone from "./../../assets/bg/warzone.png";
 import Future from "./../../assets/bg/future.png";
-import Wood from "../../assets/bg/test1.png";
+import Wood from "../../assets/bg/backgroundBeach.png";
 import Music from "../../assets/music/musicMegaman.mp3";
 import Lose from "../../assets/sound/lose.mp3";
 
@@ -44,7 +43,7 @@ const Game = ({
   const cactusRefs = useRef([]);
   const vehicleRef = useRef(null);
 
-  const locations = [Wood, City, West, Warzone, Future];
+  const locations = [Wood, West, Warzone, Future];
 
   const WORLD_WIDTH = 150;
   const WORLD_HEIGHT = 100;
@@ -60,16 +59,18 @@ const Game = ({
   let speedScaleIncrease = 0.00001;
   let themeMegaman = new Audio(Music);
   themeMegaman.loop = true;
+  themeMegaman.volume = 0.1;
   let lose = new Audio(Lose);
+  lose.volume = 0.3;
   lose.loop = false;
 
   let obstacles = [
-    { id: 0, item: CactusItem, height: "20%" },
-    { id: 1, item: HoleItem, height: "20%" },
-    { id: 2, item: RoadBlock1Item, height: "20%" },
-    { id: 3, item: RoadBlock2Item, height: "20%" },
-    { id: 4, item: RoadBlock3Item, height: "20%" },
-    { id: 5, item: RoadBlock4Item, height: "20%" },
+    { id: 0, item: EnemyOne, height: "20%" },
+    { id: 1, item: EnemyTwo, height: "20%" },
+    { id: 2, item: EnemyThree, height: "20%" },
+    { id: 3, item: EnemyFour, height: "20%" },
+    { id: 4, item: EnemyFive, height: "20%" },
+    { id: 5, item: EnemySix, height: "20%" },
   ];
   const checkDifficulty = () => {
     switch (currentDifficulty) {

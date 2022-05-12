@@ -8,7 +8,7 @@ const Main = () => {
   const [page, setPage] = useState(1);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
-  const [vehicle, setVehicle] = useState(0);
+  const [vehicle, setVehicle] = useState(1);
   const [difficulty, setDifficulty] = useState(0);
   const [location, setLocation] = useState(0);
   const [obstacles, setObstacles] = useState([1, 2, 3, 4, 5]);
