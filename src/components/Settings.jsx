@@ -17,6 +17,9 @@ import CharacterTwoOne from "./../assets/Character2/Character2Frame1.png";
 import CharacterThreeOne from "./../assets/Character3/Character3Frame1.png";
 import CharacterFourOne from "./../assets/Character4/Character4Frame1.png";
 import Beach from "./../assets/bg/backgroundBeach.png";
+import { Settings2Outline } from "@styled-icons/evaicons-outline/Settings2Outline";
+import { CloseOutline } from "@styled-icons/evaicons-outline/CloseOutline";
+import { Back } from "@styled-icons/entypo/Back";
 
 const Settings = ({
   currentVehicle,
@@ -111,7 +114,7 @@ const Settings = ({
     <>
       {!isSetting ? (
         <button className="settings-button" onClick={() => setIsSetting(true)}>
-          <img src={SettingsIcon} alt="settings button" />
+          <Settings2Outline className="settings-icon-config" />
         </button>
       ) : (
         <div className="settings-container">
@@ -122,7 +125,7 @@ const Settings = ({
                 className="setting-btn"
                 onClick={() => setIsSetting(false)}
               >
-                <img src={CloseIcon} alt="close button" />
+                <CloseOutline className="settings-icon-config" />
               </button>
             </div>
             <div className="settings-row-cards">
@@ -134,8 +137,7 @@ const Settings = ({
                   }`}
                   onClick={() => setCurrentVehicle(vehicle.id)}
                 >
-                  <img 
-                  src={vehicle.src} alt={vehicle.name} />
+                  <img src={vehicle.src} alt={vehicle.name} />
                 </div>
               ))}
             </div>
@@ -153,7 +155,7 @@ const Settings = ({
                   }`}
                   onClick={() => setCurrentDifficulty(difficulty.id)}
                 >
-                  <h6>{difficulty.name}</h6>
+                  <p className="settings-row-card-title">{difficulty.name}</p>
                   <ul>
                     {difficulty.des.map((d) => (
                       <li>{d}</li>
@@ -176,7 +178,7 @@ const Settings = ({
                   }`}
                   onClick={() => setCurrentLocation(location.id)}
                 >
-                  <h6>{location.name}</h6>
+                  <p className="settings-row-card-title">{location.name}</p>
                   <img src={location.src} alt={location.name} />
                 </div>
               ))}
@@ -220,18 +222,19 @@ const Settings = ({
           </div>
           <div className="settings-row settings-last">
             <div className="settings-row-top">{""}</div>
-            <div className="settings-row-cards">
-              <button
-                className="setting-btn"
-                onClick={() => {
-                  setHighScore(0);
-                  setScore(0);
-                  localStorage.setItem("highScore", "0");
-                }}
-              >
-                <img src={ResetIcon} alt="reset button" />
-              </button>
+            <div className="settings-row-top">
+              <h5>Reset Score</h5>
             </div>
+            <button
+              className="setting-btn"
+              onClick={() => {
+                setHighScore(0);
+                setScore(0);
+                localStorage.setItem("highScore", "0");
+              }}
+            >
+              <Back className="settings-icon-config" />
+            </button>
           </div>
         </div>
       )}
